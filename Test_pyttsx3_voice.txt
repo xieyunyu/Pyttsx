@@ -1,0 +1,29 @@
+@echo off
+echo 正在執行 FFmpeg 工具...
+
+REM 設定 FFmpeg 工具的路徑
+set FFMPEG_BIN_DIR="C:\Users\690\Dev\02_TEST\ffmpeg-master-latest-win64-gpl-shared\bin"
+
+REM 執行 FFmpeg, ffplay, ffprobe (如果需要，可以根據你的需求修改這些命令)
+
+"%FFMPEG_BIN_DIR%\ffmpeg.exe" -version
+"%FFMPEG_BIN_DIR%\ffplay.exe" -version
+"%FFMPEG_BIN_DIR%\ffprobe.exe" -version
+
+echo.  REM 輸出一個空行，增加可讀性
+
+echo 正在執行 Python 程式...
+
+REM 導覽到 Python 程式所在的資料夾
+cd /d C:\Users\690\Dev\02_TEST
+
+REM 啟動虛擬環境 (如果使用)
+if exist .venv\Scripts\activate.bat (
+    call .venv\Scripts\activate.bat
+)
+
+REM 執行 Python 程式
+python "VoiceTest_pyttsx3.py"
+
+pause
+echo 程式執行完畢。
